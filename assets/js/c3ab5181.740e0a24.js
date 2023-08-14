@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkdesign_system=self.webpackChunkdesign_system||[]).push([[6737],{7222:e=>{e.exports=JSON.parse('{"permalink":"/Design-System/blog/tags/hola","page":1,"postsPerPage":10,"totalPages":1,"totalCount":1,"blogDescription":"Blog","blogTitle":"Blog"}')}}]);

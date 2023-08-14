@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkdesign_system=self.webpackChunkdesign_system||[]).push([[5429],{5997:s=>{s.exports=JSON.parse('{"permalink":"/Design-System/blog/tags/docusaurus","page":1,"postsPerPage":10,"totalPages":1,"totalCount":4,"blogDescription":"Blog","blogTitle":"Blog"}')}}]);

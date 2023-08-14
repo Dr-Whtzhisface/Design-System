@@ -11,16 +11,16 @@ const config = {
   favicon: 'img/favicon.ico',
 
   // Set the production url of your site here
-  url: 'https://your-docusaurus-test-site.com',
+  url: 'https://github.com',
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
-  baseUrl: '/',
+  baseUrl: '/Design-System/',
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
-  organizationName: 'facebook', // Usually your GitHub org/user name.
-  projectName: 'docusaurus', // Usually your repo name.
-
+  organizationName: 'Dr-Whtzhisface', // Usually your GitHub org/user name.
+  projectName: 'Design-System', // Usually your repo name.
+  deploymentBranch: "gh-pages",
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
 

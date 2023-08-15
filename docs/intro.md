@@ -1,13 +1,13 @@
 ---
-sidebar_position: 1
+id: figma-example
+title: Figma Image Example
 ---
 
-# Figma Image Example
-
-Here's the generated Figma Image:
+Here's the embedded Figma image using an inline iframe:
 
 <FigmaImage
-  fileToken="4vMAPIHT9iqOuhqF4N97kp"
-  apiToken="figd_mcFPFGozK2HCuON5VTyrpvNyGien_J8BJsMUxak2"
+  fileToken="YOUR_FILE_TOKEN_HERE"
+  apiToken="YOUR_API_TOKEN_HERE"
 />
+
 

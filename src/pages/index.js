@@ -40,3 +40,20 @@ export default function Home() {
     </Layout>
   );
 }
+
+// src/pages/index.js
+import FigmaImage from '../components/FigmaImage';
+
+function HomePage() {
+  return (
+    <div>
+      <h1>Welcome to My Docusaurus Site</h1>
+      <FigmaImage
+        fileToken="YOUR_FILE_TOKEN_HERE"
+        apiToken="YOUR_API_TOKEN_HERE"
+      />
+    </div>
+  );
+}
+
+

@@ -4,7 +4,7 @@ const FigmaImage = ({ fileToken, apiToken }) => {
   const [imageUrl, setImageUrl] = useState('');
 
   useEffect(() => {
-    const figmaNodeId = '1:1045';
+    const figmaNodeId = '1:1045'; // Replace with your Figma Node ID
     const figmaScale = '1';
     const figmaFormat = 'png';
 
@@ -29,14 +29,14 @@ const FigmaImage = ({ fileToken, apiToken }) => {
 
   return (
     <div>
-      <p>Generated Figma Image URL:</p>
-      <a href={imageUrl} target="_blank" rel="noopener noreferrer">
-        {imageUrl}
-      </a>
+      <p>Generated Figma Image:</p>
+      <img src={imageUrl} alt="Figma Image" />
     </div>
   );
 };
 
 export default FigmaImage;
+
+
 
 

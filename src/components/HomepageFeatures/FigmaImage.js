@@ -30,7 +30,9 @@ const FigmaImage = ({ fileToken, apiToken }) => {
   return (
     <div>
       <p>Generated Figma Image URL:</p>
-      <p>{imageUrl}</p>
+      <a href={imageUrl} target="_blank" rel="noopener noreferrer">
+        {imageUrl}
+      </a>
     </div>
   );
 };

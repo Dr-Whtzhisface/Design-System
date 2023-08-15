@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 
 const FigmaImage = ({ fileToken, apiToken }) => {
   const [imageUrl, setImageUrl] = useState('');
+  const [error, setError] = useState(null);
 
   useEffect(() => {
     const figmaNodeId = '1:1045'; // Replace with your Figma Node ID
@@ -17,25 +18,35 @@ const FigmaImage = ({ fileToken, apiToken }) => {
           }
         });
 
+        if (!response.ok) {
+          setError('Error fetching Figma image');
+          return;
+        }
+
         const data = await response.json();
         setImageUrl(data.images[figmaFormat]);
       } catch (error) {
-        console.error('Error fetching Figma image:', error);
+        setError('Error fetching Figma image: ' + error.message);
       }
     };
 
     fetchFigmaImage();
   }, [fileToken, apiToken]);
 
+  if (error) {
+    return <p>{error}</p>;
+  }
+
   return (
     <div>
       <p>Generated Figma Image:</p>
-      <img src={imageUrl} alt="Figma Image" />
+      {imageUrl ? <img src={imageUrl} alt="Figma Image" /> : <p>Loading...</p>}
     </div>
   );
 };
 
 export default FigmaImage;
+
 
 
 

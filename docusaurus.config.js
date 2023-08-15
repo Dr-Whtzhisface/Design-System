@@ -6,8 +6,8 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: 'Hypergiant N2NX Design System',
-  tagline: 'Designing Tomorrow Today',
+  title: "Hypergiant N2NX Design System",
+  tagline: "Designing Tomorrow Today",
   favicon: 'img/favicon.ico',
 
   // Set the production url of your site here

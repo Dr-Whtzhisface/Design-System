@@ -2,7 +2,7 @@
 import React from 'react';
 import FigmaImage from '../components/HomepageFeatures/FigmaImage';
 
-function HomePage() {
+export default function HomePage() {
   return (
     <div>
       <h1>Welcome to My Docusaurus Site</h1>
@@ -13,5 +13,3 @@ function HomePage() {
     </div>
   );
 }
-
-export default function HomePage();

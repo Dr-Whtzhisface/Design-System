@@ -6,6 +6,19 @@ import Layout from '@theme/Layout';
 import HomepageFeatures from '@site/src/components/HomepageFeatures';
 
 import styles from './index.module.css';
+import FigmaImage from '../components/FigmaImage';
+
+export default function HomePage() {
+  return (
+    <div>
+      <h1>Welcome to My Docusaurus Site</h1>
+      <FigmaImage
+        fileToken="YOUR_FILE_TOKEN_HERE"
+        apiToken="YOUR_API_TOKEN_HERE"
+      />
+    </div>
+  );
+}
 
 function HomepageHeader() {
   const {siteConfig} = useDocusaurusContext();

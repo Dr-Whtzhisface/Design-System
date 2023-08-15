@@ -1,50 +1,45 @@
----
-sidebar_position: 1
----
+# Figma Image Example
 
-# Tutorial Intro
+Here's an example of embedding an image fetched from the Figma API:
 
-Let's discover **Docusaurus in less than 5 minutes**.
+<div id="figma-image"></div>
 
-<iframe width="800" height="450" src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Ffile%2F4vMAPIHT9iqOuhqF4N97kp%2FPRM-Sandbox%3Ftype%3Ddesign%26node-id%3D3%253A2254%26mode%3Ddesign%26t%3DH6u7p8pfn2TqxhV1-1" allowfullscreen></iframe>
+# Figma Image Example
 
+Here's an example of embedding an image fetched from the Figma API:
 
-## Getting Started
+<div id="figma-image"></div>
 
-Get started by **creating a new site**.
+<script>
+  // Replace 'YOUR_FIGMA_NODE_ID', 'YOUR_FIGMA_SCALE', and 'YOUR_FIGMA_API_TOKEN' with actual values
+  const figmaNodeId = '1:1045';
+  const figmaScale = '1';
+  const figmaFormat = 'png';
+  const figmaApiToken = 'figd_mcFPFGozK2HCuON5VTyrpvNyGien_J8BJsMUxak2';
 
-Or **try Docusaurus immediately** with **[docusaurus.new](https://docusaurus.new)**.
+  // Construct the Figma API URL
+  const figmaApiUrl = `https://api.figma.com/v1/images/${figmaNodeId}?scale=${figmaScale}&format=${figmaFormat}`;
 
-### What you'll need
+  // Make a GET request to the Figma API
+  fetch(figmaApiUrl, {
+    headers: {
+      'X-FIGMA-TOKEN': figmaApiToken
+    }
+  })
+    .then(response => response.json())
+    .then(data => {
+      const imageUrl = data.images[figmaFormat]; // Assuming the requested format is present
+      
+      // Create an image element
+      const imgElement = document.createElement('img');
+      imgElement.src = imageUrl;
+      
+      // Append the image to the div with id 'figma-image'
+      const imageContainer = document.getElementById('figma-image');
+      imageContainer.appendChild(imgElement);
+    })
+    .catch(error => {
+      console.error('Error fetching Figma image:', error);
+    });
+</script>
 
-- [Node.js](https://nodejs.org/en/download/) version 16.14 or above:
-  - When installing Node.js, you are recommended to check all checkboxes related to dependencies.
-
-## Generate a new site
-
-Generate a new Docusaurus site using the **classic template**.
-
-The classic template will automatically be added to your project after you run the command:
-
-```bash
-npm init docusaurus@latest my-website classic
-```
-
-You can type this command into Command Prompt, Powershell, Terminal, or any other integrated terminal of your code editor.
-
-The command also installs all necessary dependencies you need to run Docusaurus.
-
-## Start your site
-
-Run the development server:
-
-```bash
-cd my-website
-npm run start
-```
-
-The `cd` command changes the directory you're working with. In order to work with your newly created Docusaurus site, you'll need to navigate the terminal there.
-
-The `npm run start` command builds your website locally and serves it through a development server, ready for you to view at http://localhost:3000/.
-
-Open `docs/intro.md` (this page) and edit some lines: the site **reloads automatically** and displays your changes.

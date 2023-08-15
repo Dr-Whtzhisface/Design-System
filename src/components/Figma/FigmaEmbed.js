@@ -12,7 +12,7 @@ const FigmaEmbed = ({ fileToken, apiToken, nodeId, scale, format }) => {
         <iframe
           title="Figma Embed"
           src={figmaImageUrl}
-          width="100%"
+          width="600"
           height="400"
           frameBorder="0"
         />

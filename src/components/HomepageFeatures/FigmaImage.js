@@ -1,8 +1,8 @@
+// src/components/FigmaImage.js
 import React, { useEffect, useState } from 'react';
 
 const FigmaImage = ({ fileToken, apiToken }) => {
   const [imageUrl, setImageUrl] = useState('');
-  const [error, setError] = useState(null);
 
   useEffect(() => {
     const figmaNodeId = '1:1045'; // Replace with your Figma Node ID
@@ -18,38 +18,24 @@ const FigmaImage = ({ fileToken, apiToken }) => {
           }
         });
 
-        if (!response.ok) {
-          setError('Error fetching Figma image');
-          return;
+        if (response.ok) {
+          const data = await response.json();
+          setImageUrl(data.images[figmaFormat]);
         }
-
-        const data = await response.json();
-        setImageUrl(data.images[figmaFormat]);
       } catch (error) {
-        setError('Error fetching Figma image: ' + error.message);
+        console.error('Error fetching Figma image:', error);
       }
     };
 
     fetchFigmaImage();
   }, [fileToken, apiToken]);
 
-  if (error) {
-    return <p>{error}</p>;
-  }
-
   return (
     <div>
-      <p>Generated Figma Image is Awesome:</p>
       {imageUrl ? (
-        <div>
-          <a href={imageUrl} target="_blank" rel="noopener noreferrer">
-            View Figma Image
-          </a>
-          <br />
-          <img src={imageUrl} alt="Figma Image" />
-        </div>
+        <img src={imageUrl} alt="Figma Image" />
       ) : (
-        <p>Loading...</p>
+        <p>Loading Figma image...</p>
       )}
     </div>
   );

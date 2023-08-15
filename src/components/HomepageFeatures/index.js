@@ -1,6 +1,6 @@
 // src/pages/index.js
 import React from 'react';
-import FigmaImage from '../components/FigmaImage';
+import FigmaImage from '../components/HomepageFeatures/FigmaImage';
 
 function HomePage() {
   return (

@@ -5,26 +5,42 @@ const FigmaImage = ({ fileToken, apiToken }) => {
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    const figmaNodeId = '1:1045'; // Replace with your Figma Node ID
+    const figmaFileKey = 'your_file_key'; // Replace with your Figma file key
+    const figmaNodeId = '1:1045'; // Replace with the desired node ID
     const figmaScale = '1';
     const figmaFormat = 'png';
 
     const fetchFigmaImage = async () => {
       try {
-        const response = await fetch(`https://api.figma.com/v1/images/${figmaNodeId}?scale=${figmaScale}&format=${figmaFormat}`, {
+        // Fetch file information to get the file key
+        const fileResponse = await fetch(`https://api.figma.com/v1/files/${figmaFileKey}`, {
           headers: {
             'X-FIGMA-TOKEN': apiToken,
-            'X-FIGMA-FILE-TOKEN': fileToken
-          }
+          },
         });
 
-        if (!response.ok) {
+        if (!fileResponse.ok) {
+          setError('Error fetching Figma file information');
+          return;
+        }
+
+        const fileData = await fileResponse.json();
+        const fileId = fileData.id;
+
+        // Fetch specific image using Get Image endpoint
+        const imageResponse = await fetch(`https://api.figma.com/v1/images/${fileId}?ids=${figmaNodeId}&scale=${figmaScale}&format=${figmaFormat}`, {
+          headers: {
+            'X-FIGMA-TOKEN': apiToken,
+          },
+        });
+
+        if (!imageResponse.ok) {
           setError('Error fetching Figma image');
           return;
         }
 
-        const data = await response.json();
-        setImageUrl(data.images[figmaFormat]);
+        const imageData = await imageResponse.json();
+        setImageUrl(imageData.images[figmaNodeId]);
       } catch (error) {
         setError('Error fetching Figma image: ' + error.message);
       }
@@ -39,13 +55,8 @@ const FigmaImage = ({ fileToken, apiToken }) => {
 
   return (
     <div>
-      <p>Generated Figma Image:</p>
       {imageUrl ? (
-        <p>
-          <a href={imageUrl} target="_blank" rel="noopener noreferrer">
-            Open Figma Image
-          </a>
-        </p>
+        <img src={imageUrl} alt="Figma Image" />
       ) : (
         <p>Loading Figma image...</p>
       )}
@@ -54,3 +65,4 @@ const FigmaImage = ({ fileToken, apiToken }) => {
 };
 
 export default FigmaImage;
+

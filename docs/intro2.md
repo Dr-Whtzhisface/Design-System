@@ -1,13 +1,10 @@
 ---
-id: figma-example
-title: Figma Image Example
+id: figma-page
+title: Figma Page
 ---
 
-Here's the embedded Figma image using an inline iframe:
+This is the documentation for the Figma Page.
 
-<FigmaImage
-  fileToken="4vMAPIHT9iqOuhqF4N97kp"
-  apiToken="figd_5SNF0sJ1fM3ZywxG0Tb6jjESus7-NF2_Q3rMDAJq"
-/>
+[Link to Figma Page](/FigmaPage)
 
 

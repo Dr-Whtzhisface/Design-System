@@ -42,7 +42,7 @@ export default function Home() {
 }
 
 // src/pages/index.js
-import FigmaImage from '../components/FigmaImage';
+import FigmaImage from '../components/HomepageFeatures/FigmaImage';
 
 function HomePage() {
   return (

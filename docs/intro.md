@@ -6,7 +6,7 @@ sidebar_position: 1
 
 Let's discover **Docusaurus in less than 5 minutes**.
 
-<iframe width="800" height="450" src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Ffile%2F4vMAPIHT9iqOuhqF4N97kp%2FPRM-Sandbox%3Ftype%3Ddesign%26node-id%3D3%253A2254%26mode%3Ddesign%26t%3DH6u7p8pfn2TqxhV1-1" allowfullscreen></iframe>
+<iframe width="800" height="450" src="https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/638ec794-c976-44e7-9f6c-1a61ca34f51d" allowfullscreen></iframe>
 
 
 ## Getting Started

@@ -6,7 +6,7 @@ import Layout from '@theme/Layout';
 import HomepageFeatures from '@site/src/components/HomepageFeatures';
 
 import styles from './index.module.css';
-import FigmaImage from '../components/FigmaImage';
+import FigmaImage from '../components/HomepageFeatures/FigmaImage';
 
 export default function HomePage() {
   return (

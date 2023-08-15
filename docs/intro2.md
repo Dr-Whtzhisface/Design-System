@@ -6,8 +6,8 @@ title: Figma Image Example
 Here's the embedded Figma image using an inline iframe:
 
 <FigmaImage
-  fileToken="YOUR_FILE_TOKEN_HERE"
-  apiToken="YOUR_API_TOKEN_HERE"
+  fileToken="4vMAPIHT9iqOuhqF4N97kp"
+  apiToken="figd_5SNF0sJ1fM3ZywxG0Tb6jjESus7-NF2_Q3rMDAJq"
 />
 
 

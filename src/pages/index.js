@@ -4,6 +4,7 @@ import Link from '@docusaurus/Link';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import Layout from '@theme/Layout';
 import HomepageFeatures from '@site/src/components/HomepageFeatures';
+import FigmaImage from '@site/src/components/HomepageFeatures/FigmaImage';
 
 import styles from './index.module.css';
 

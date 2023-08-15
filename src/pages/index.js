@@ -8,6 +8,19 @@ import HomepageFeatures from '@site/src/components/HomepageFeatures';
 import styles from './index.module.css';
 import FigmaImage from '../components/HomepageFeatures/FigmaImage';
 
+function HomePage() {
+  return (
+    <div>
+      <h1>Welcome to My Docusaurus Site</h1>
+      <FigmaImage
+        fileToken="YOUR_FILE_TOKEN_HERE"
+        apiToken="YOUR_API_TOKEN_HERE"
+      />
+    </div>
+  );
+}
+
+
 function HomepageHeader() {
   const {siteConfig} = useDocusaurusContext();
   return (
@@ -40,20 +53,3 @@ export default function Home() {
     </Layout>
   );
 }
-
-// src/pages/index.js
-import FigmaImage from '../components/HomepageFeatures/FigmaImage';
-
-function HomePage() {
-  return (
-    <div>
-      <h1>Welcome to My Docusaurus Site</h1>
-      <FigmaImage
-        fileToken="YOUR_FILE_TOKEN_HERE"
-        apiToken="YOUR_API_TOKEN_HERE"
-      />
-    </div>
-  );
-}
-
-
